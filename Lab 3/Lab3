@@ -1,0 +1,115 @@
+//3
+
+/*db.getCollection('lab4').insertOne({
+
+    "name": "John",
+
+    "dateOfBirth": "1990-01-01T00:00:00Z",
+
+    "subjects": ["Application frameworks", "Computer architecture"]
+
+    })
+
+*/
+
+
+
+//4
+
+//db.getCollection('lab4').find({"name":"John"})
+
+
+
+
+
+//5
+
+/*db.getCollection('lab4').find({"_id":ObjectId("6044537f8f720433301d3ce8")})
+
+*/
+
+
+
+//6
+
+/*db.getCollection('lab4').update(
+
+{"name":"John"},
+
+{$push: {"subjects":"Distributed Computing"}}
+
+) */
+
+/*
+
+db.getCollection('lab4').update( 
+
+{"name":"John"},
+
+{$addToSet: {"subjects":"Software Architecture"}}
+
+)*/
+
+
+
+//7
+
+/*db.getCollection('lab4').insertMany([
+
+{
+
+"name": "Smith",
+
+"dateOfBirth": "1990-01-15T00:00:00Z",
+
+"subjects": ["Application frameworks", "Computer architecture"],
+
+"isActive": true
+
+},
+
+{
+
+"name": "Jane",
+
+"dateOfBirth": "1990-02-15T00:00:00Z",
+
+"subjects": ["Application frameworks", "Computer architecture"],
+
+    "isActive": false
+
+}])
+
+*/
+
+
+
+//8
+
+/*db.getCollection('lab4').update(
+
+{"name":"Smith", "isActive": {$eq:true}},
+
+{$addToSet:{"subjects":"Distributed Computing"}}
+
+)*/
+
+
+
+//9
+
+/*db.getCollection('lab4').updateOne(
+
+{},  {$set: {"isActive": false}})
+
+*/
+
+
+
+//10
+
+//db.getCollection('lab4').deleteOne({});
+
+
+
+    
