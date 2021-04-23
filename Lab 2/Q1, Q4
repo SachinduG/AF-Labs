@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SLIIT</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*function getValue(callback){
+        let value = 0;
+        setTimeout(function (){
+            value = 10;
+            callback(value);
+        }, 1000);
+        return value;
+    }
+
+    function getNewValue(value, callback){
+        setTimeout(function (){
+            callback(value * 2);
+        }, 1000);
+    }
+
+    getValue(function (value){
+        getNewValue(value, function (NewValue){
+            console.log(NewValue);
+        });
+    });*/
+
+    function getValue(){
+        let value = 0;
+        return new Promise(function (resolve, reject){
+            setTimeout(function (){
+                value = 10;
+                resolve(value);
+            }, 1000);
+        });
+    }
+
+    function getNewValue(value){
+        return new Promise(function (resolve, reject){
+            setTimeout(function (){
+                resolve(value * 2);
+            },1000);
+        });
+    }
+
+    function  getOtherValue(value){
+        return value + 10;
+    }
+
+    /*getValue().then(function (value) {
+        return getNewValue(value);
+    }).then(function (newValue) {
+        return getOtherValue(newValue);
+    }).then(function (otherValue){
+        console.log(otherValue);
+    });*/
+
+    async function print(){
+        let value = await getValue();
+        value = await getNewValue(value);
+        value = getOtherValue(value);
+        return value;
+    }
+
+    print().then(function (value){
+        console.log(value);
+    })
+
+</script>
+</body>
+</html>
